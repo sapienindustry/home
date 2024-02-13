@@ -27,7 +27,7 @@ console.log(graphs);
 const backNavigator = document.querySelector(".backNavigator");
 backNavigator.addEventListener('click',()=>{
     var a = document.createElement('a');
-    a.href="sitemap/neuropsychology/perception/perception.html";
+    a.href="/Users/lordyolo/Desktop/website/sitemap/neuropsychology/perception/perception.html";
     a.click()
 });
 
@@ -39,20 +39,20 @@ heading.addEventListener("click",()=>{
 
 const controls = document.querySelector("div.controlBox");
 const rightArrow = document.createElement("img");
-rightArrow.src = "sitemap/assets/buttons/arrow/rightarrow/rightArrow.png";
+rightArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/rightarrow/rightArrow.png";
 
 rightArrow.className = "controlButton";
 rightArrow.id= "rightArrow";
 
 const leftArrow = document.createElement("img");
-leftArrow.src = "sitemap/assets/buttons/arrow/leftarrow/leftArrow.png";
+leftArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/leftarrow/leftArrow.png";
 leftArrow.className = "controlButton";
 leftArrow.id= "leftArrow";
 leftArrow.style.display="none";
 
 const spacebarHTMLContainer = document.querySelector("div.buttonContainer#spacebarContainer");
-const spacebarImageSource= document.createTextNode("sitemap/assets/buttons/spacebar/spaceBar.png");
-const spacebarPressedImageSource = document.createTextNode("sitemap/assets/buttons/spacebar/spaceBarPressed.png");
+const spacebarImageSource= document.createTextNode("/Users/lordyolo/Desktop/website/sitemap/assets/buttons/spacebar/spaceBar.png");
+const spacebarPressedImageSource = document.createTextNode("/Users/lordyolo/Desktop/website/sitemap/assets/buttons/spacebar/spaceBarPressed.png");
 
 const spacebar = document.createElement('img');
 spacebar.src = spacebarImageSource.textContent;
@@ -61,8 +61,8 @@ spacebar.id="spacebar";
 spacebarHTMLContainer.appendChild(spacebar);
 
 const enterHTMLContainer = document.querySelector("div.buttonContainer#enterContainer");
-const enterImageSource= document.createTextNode("sitemap/assets/buttons/enter/enterButton.png");
-const enterPressedImageSource = document.createTextNode("sitemap/assets/buttons/enter/enterButtonPressed.png");
+const enterImageSource= document.createTextNode("/Users/lordyolo/Desktop/website/sitemap/assets/buttons/enter/enterButton.png");
+const enterPressedImageSource = document.createTextNode("/Users/lordyolo/Desktop/website/sitemap/assets/buttons/enter/enterButtonPressed.png");
 
 const enter = document.createElement('img');
 enter.src = enterImageSource.textContent;
@@ -216,13 +216,13 @@ function buttonPressedIn(e){
         e.preventDefault();
         if(e.target == rightArrow || e.code == "ArrowRight")
         {
-            rightArrow.src = "sitemap/assets/buttons/arrow/rightarrow/rightArrowPressed.png";
-            setTimeout(()=>{rightArrow.src = "sitemap/assets/buttons/arrow/rightarrow/rightArrow.png"},150);
+            rightArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/rightarrow/rightArrowPressed.png";
+            setTimeout(()=>{rightArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/rightarrow/rightArrow.png"},150);
         };
         if(e.target == leftArrow || e.code =="ArrowLeft")
         {
-            leftArrow.src = "sitemap/assets/buttons/arrow/leftarrow/leftArrowPressed.png";
-            setTimeout(()=>{leftArrow.src = "sitemap/assets/buttons/arrow/leftarrow/leftArrow.png"},150);
+            leftArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/leftarrow/leftArrowPressed.png";
+            setTimeout(()=>{leftArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/leftarrow/leftArrow.png"},150);
         };
         if(e.code =="Enter"|| e.target==enter)
         {
@@ -923,12 +923,12 @@ const highHZ = new Chart("highHz",
         );
 
         const savePDF = document.createElement('img');
-        savePDF.src = "sitemap/assets/buttons/save/savePDF/pdfImg.png"
+        savePDF.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/save/savePDF/pdfImg.png"
         savePDF.id = 'savePDF';
         savePDF.className = 'controlButton';
 
         const saveFile = document.createElement('img');
-        saveFile.src = "sitemap/assets/buttons/save/saveRawFile/saveImg.png";
+        saveFile.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/save/saveRawFile/saveImg.png";
         saveFile.id = 'saveFile';
         saveFile.className = 'controlButton';
 
@@ -959,7 +959,7 @@ const highHZ = new Chart("highHz",
         const instaLink = document.createElement('img');
         instaLink.className="BottomRowImageButton";
         instaLink.id = 'instaLink';
-        instaLink.src = "sitemap/assets/buttons/socialMedia/instalogo/instagram link logo.png"
+        instaLink.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/socialMedia/instalogo/instagram link logo.png"
         
         instaLink.addEventListener('click',()=>{
             window.open("https://www.instagram.com/sapienindustry/");
@@ -968,10 +968,10 @@ const highHZ = new Chart("highHz",
         const home = document.createElement('img');
         home.className = "BottomRowImageButton";
         home.id = "homeImage";
-        home.src = "sitemap/assets/buttons/home/homeButton.png";
+        home.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/home/homeButton.png";
         home.addEventListener('click',()=>{
             var a = document.createElement('a');
-            a.href="index.html";
+            a.href="/Users/lordyolo/Desktop/website/index.html";
             a.click();
         });
         

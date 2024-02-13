@@ -13,7 +13,7 @@ const aboutPage3 = document.querySelector("#about3");
 const backNavigator = document.querySelector('p');
 backNavigator.addEventListener('click',()=>{
     var a = document.createElement('a');
-    a.href="sitemap/psychodivergency/psychodivergency.html";
+    a.href="/Users/lordyolo/Desktop/website/sitemap/psychodivergency/psychodivergency.html";
     a.click()
 });
 
@@ -29,7 +29,7 @@ heading.addEventListener("click",()=>{
 
 const controls = document.querySelector("div.controlBox");
 const rightArrow = document.createElement("img");
-rightArrow.src = "sitemap/assets/buttons/arrow/rightarrow/rightArrow.png";
+rightArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/rightarrow/rightArrow.png";
 rightArrow.width = 45;
 rightArrow.height = 45;
 rightArrow.className = "controlButton";
@@ -37,7 +37,7 @@ rightArrow.id= "rightArrow";
 rightArrow.style.display = "inline"
 
 const leftArrow = document.createElement("img");
-leftArrow.src = "sitemap/assets/buttons/arrow/leftarrow/leftArrow.png";
+leftArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/leftarrow/leftArrow.png";
 leftArrow.width = 45;
 leftArrow.height = 45;
 leftArrow.className = "controlButton";
@@ -146,12 +146,12 @@ function buttonPressedIn(e){
     if(e.target==leftArrow || e.target==rightArrow || e.code =="ArrowLeft" || e.code =="ArrowRight"){
         e.preventDefault();
         if(e.target==leftArrow || e.code =="ArrowLeft"){
-            leftArrow.src = "sitemap/assets/buttons/arrow/leftarrow/leftArrowPressed.png";
-            setTimeout((e)=>{leftArrow.src = "sitemap/assets/buttons/arrow/leftarrow/leftArrow.png"},200)
+            leftArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/leftarrow/leftArrowPressed.png";
+            setTimeout((e)=>{leftArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/leftarrow/leftArrow.png"},200)
         }
         else if(e.target==rightArrow || e.code =="ArrowRight"){
-            rightArrow.src = "sitemap/assets/buttons/arrow/rightarrow/rightArrowPressed.png";
-            setTimeout((e)=>{rightArrow.src = "sitemap/assets/buttons/arrow/rightarrow/rightArrow.png"},200)
+            rightArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/rightarrow/rightArrowPressed.png";
+            setTimeout((e)=>{rightArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/rightarrow/rightArrow.png"},200)
         };
     };
 };
@@ -172,7 +172,7 @@ function buttonReleased(e) {
                 taskDisplay.style.display="none";
             };
             if(getComputedStyle(taskDisplay).display=="block"){
-            leftArrow.src = "sitemap/assets/buttons/arrow/leftarrow/leftArrow.png"
+            leftArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/leftarrow/leftArrow.png"
             taskDisplay.innerHTML = "";
             rightArrow.style.display = "none";
             radioButtonsContainer.innerHTML = "";
@@ -215,7 +215,7 @@ function buttonReleased(e) {
 }
     else if((e.target==rightArrow || e.code =="ArrowRight") && rightArrow.style.display=="inline"){
         {
-            rightArrow.src = "sitemap/assets/buttons/arrow/rightarrow/rightArrow.png"
+            rightArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/rightarrow/rightArrow.png"
             if(getComputedStyle(aboutPage1).display=="block"){
                 aboutPage1.style.display = "none";
                 aboutPage2.style.display="block";
@@ -313,7 +313,7 @@ function windowOpen(x){
 const instaLink = document.createElement('img');
 instaLink.className="BottomRowImageButton";
 instaLink.id = 'instaLink';
-instaLink.src = "sitemap/assets/buttons/socialMedia/instalogo/instagram link logo.png"
+instaLink.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/socialMedia/instalogo/instagram link logo.png"
 
 instaLink.addEventListener('click',()=>{
     window.open("https://www.instagram.com/sapienindustry/");
@@ -322,10 +322,10 @@ instaLink.addEventListener('click',()=>{
 const home = document.createElement('img');
 home.className = "BottomRowImageButton";
 home.id = "homeImage";
-home.src = "sitemap/assets/buttons/home/homeButton.png";
+home.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/home/homeButton.png";
 home.addEventListener('click',()=>{
     var a = document.createElement('a');
-          a.href="index.html";
+          a.href="/Users/lordyolo/Desktop/website/index.html";
         a.click();
 });
        

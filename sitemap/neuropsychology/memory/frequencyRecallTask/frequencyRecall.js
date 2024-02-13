@@ -18,7 +18,7 @@ const instructionHeading =document.querySelector("h3.subheading#instructionSubhe
 const backNavigator = document.querySelector(".backNavigator");
 backNavigator.addEventListener('click',()=>{
     var a = document.createElement('a');
-    a.href="sitemap/neuropsychology/memory/memory.html";
+    a.href="/Users/lordyolo/Desktop/website/sitemap/neuropsychology/memory/memory.html";
     a.click()
 })
 
@@ -30,13 +30,13 @@ heading.addEventListener("click",()=>{
 
 const controls = document.querySelector("div.controlBox");
 const rightArrow = document.createElement("img");
-rightArrow.src = "sitemap/assets/buttons/arrow/rightarrow/rightArrow.png";
+rightArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/rightarrow/rightArrow.png";
 
 rightArrow.className = "controlButton";
 rightArrow.id= "rightArrow";
 
 const leftArrow = document.createElement("img");
-leftArrow.src = "sitemap/assets/buttons/arrow/leftarrow/leftArrow.png";
+leftArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/leftarrow/leftArrow.png";
 leftArrow.className = "controlButton";
 leftArrow.id= "leftArrow";
 leftArrow.style.display="none";
@@ -44,7 +44,7 @@ leftArrow.style.display="none";
 const taskDisplay = document.querySelector(".task");
 
 const clockHTMLContainer = document.querySelector("div.prompt#clockPrompt");
-const clockImageSource= document.createTextNode("sitemap/assets/taskProbes/visual/clock/clock.png");
+const clockImageSource= document.createTextNode("/Users/lordyolo/Desktop/website/sitemap/assets/taskProbes/visual/clock/clock.png");
 
 
 const clock = document.createElement('img');
@@ -53,8 +53,8 @@ clock.id="clock";
 clockHTMLContainer.appendChild(clock);
 
 const enterHTMLContainer = document.querySelector("div.buttonContainer#enterContainer");
-const enterImageSource= document.createTextNode("sitemap/assets/buttons/enter/enterButton.png");
-const enterPressedImageSource = document.createTextNode("sitemap/assets/buttons/enter/enterButtonPressed.png");
+const enterImageSource= document.createTextNode("/Users/lordyolo/Desktop/website/sitemap/assets/buttons/enter/enterButton.png");
+const enterPressedImageSource = document.createTextNode("/Users/lordyolo/Desktop/website/sitemap/assets/buttons/enter/enterButtonPressed.png");
 
 const enter = document.createElement('img');
 enter.src = enterImageSource.textContent;
@@ -63,8 +63,8 @@ enter.id="enter";
 enterHTMLContainer.appendChild(enter);
 
 const playSoundButtonHTMLContainer = document.querySelector("div.buttonContainer#playSoundContainer");
-const playSoundButtonImageSource= document.createTextNode("sitemap/assets/buttons/sound/soundButton.png")
-const playSoundButtonPressedImgSource = document.createTextNode("sitemap/assets/buttons/sound/soundButtonPressed.png")
+const playSoundButtonImageSource= document.createTextNode("/Users/lordyolo/Desktop/website/sitemap/assets/buttons/sound/soundButton.png")
+const playSoundButtonPressedImgSource = document.createTextNode("/Users/lordyolo/Desktop/website/sitemap/assets/buttons/sound/soundButtonPressed.png")
 
 const playSoundButton = document.createElement('img');
 playSoundButton.src = playSoundButtonImageSource.textContent;
@@ -95,13 +95,13 @@ function buttonPressedIn(e){
         e.preventDefault();
         if(e.target == rightArrow || e.code == "ArrowRight")
         {
-            rightArrow.src = "sitemap/assets/buttons/arrow/rightarrow/rightArrowPressed.png";
-            setTimeout(()=>{rightArrow.src = "sitemap/assets/buttons/arrow/rightarrow/rightArrow.png"},150);
+            rightArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/rightarrow/rightArrowPressed.png";
+            setTimeout(()=>{rightArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/rightarrow/rightArrow.png"},150);
         };
         if(e.target == leftArrow || e.code =="ArrowLeft")
         {
-            leftArrow.src = "sitemap/assets/buttons/arrow/leftarrow/leftArrowPressed.png";
-            setTimeout(()=>{leftArrow.src = "sitemap/assets/buttons/arrow/leftarrow/leftArrow.png"},150);
+            leftArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/leftarrow/leftArrowPressed.png";
+            setTimeout(()=>{leftArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/leftarrow/leftArrow.png"},150);
         };
         if(e.target == playSoundButton){
             if(getComputedStyle(step1).display=="block"){
@@ -119,7 +119,7 @@ function buttonPressedIn(e){
 function buttonReleased(e){
     if(e.target == rightArrow || e.code == "ArrowRight" || e.target == leftArrow || e.code =="ArrowLeft" || e.target == playSoundButton || e.target == enter || e.code =="Enter"){
         if(e.target == rightArrow || e.code == "ArrowRight"){
-            rightArrow.src = "sitemap/assets/buttons/arrow/rightarrow/rightArrow.png";
+            rightArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/rightarrow/rightArrow.png";
             if(getComputedStyle(instructionPage1).display =="block")
             {
                 instructionPage1.style.display="none";
@@ -166,7 +166,7 @@ function buttonReleased(e){
         };
         if(e.target == leftArrow || e.code =="ArrowLeft")
         {
-            leftArrow.src = "sitemap/assets/buttons/arrow/leftarrow/leftArrow.png";
+            leftArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/leftarrow/leftArrow.png";
             if(getComputedStyle(instructionPage2).display == "block")
             {
                 instructionPage1.style.display="block";
@@ -721,7 +721,7 @@ function practiceTask(){
                                                                         clearInterval(timer);
                                                                         taskDisplay.innerHTML ='';
                                                                         var reminder = document.createElement("audio");
-                                                                        reminder.src="sitemap/neuropsychology/memory/G5 jingle.m4a";
+                                                                        reminder.src="/Users/lordyolo/Desktop/website/sitemap/neuropsychology/memory/G5 jingle.m4a";
                                                                         task.appendChild(reminder);
                                                                         reminder.volume=0.15;
                                                                         reminder.play();
@@ -953,12 +953,12 @@ function practiceTask(){
                                                                     
                                                                     
                                                                     const rightArrow = document.createElement('img');
-                                                                    rightArrow.src = "sitemap/assets/buttons/arrow/rightarrow/rightArrow.png"
+                                                                    rightArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/rightarrow/rightArrow.png"
                                                                     rightArrow.width = 50;
                                                                     rightArrow.height = 50;
                                                                     
                                                                     const leftArrow = document.createElement('img');
-                                                                    leftArrow.src = "sitemap/assets/buttons/arrow/leftarrow/leftArrow.png"
+                                                                    leftArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/leftarrow/leftArrow.png"
                                                                     leftArrow.width = 50;
                                                                     leftArrow.height = 50;
                                                                     leftArrow.style.display = "none";
@@ -1020,7 +1020,7 @@ function practiceTask(){
                                                                     const instaLink = document.createElement('img');
                                                                     instaLink.className="BottomRowImageButton";
                                                                     instaLink.id = 'instaLink';
-                                                                    instaLink.src = "sitemap/assets/buttons/socialMedia/instalogo/instagram link logo.png"
+                                                                    instaLink.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/socialMedia/instalogo/instagram link logo.png"
                                                                     
                                                                     instaLink.addEventListener('click',()=>{
                                                                         window.open("https://www.instagram.com/sapienindustry/");
@@ -1029,10 +1029,10 @@ function practiceTask(){
                                                                     const home = document.createElement('img');
                                                                     home.className = "BottomRowImageButton";
                                                                     home.id = "homeImage";
-                                                                    home.src = "sitemap/assets/buttons/home/homeButton.png";
+                                                                    home.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/home/homeButton.png";
                                                                     home.addEventListener('click',()=>{
                                                                         var a = document.createElement('a');
-                                                                        a.href="index.html";
+                                                                        a.href="/Users/lordyolo/Desktop/website/index.html";
                                                                         a.click();
                                                                     });
                                                                     

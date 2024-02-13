@@ -11,7 +11,7 @@ const about = document.querySelector('.about');
 const backNavigator = document.querySelector(".backNavigator");
 backNavigator.addEventListener("click",()=>{
     var a = document.createElement('a');
-      a.href="index.html";
+      a.href="/Users/lordyolo/Desktop/website/index.html";
     a.click();
 })
 
@@ -24,14 +24,14 @@ heading.addEventListener("click",()=>{
 const controls = document.querySelector('div.controlBox');
 
 const rightArrow = document.createElement("img");
-rightArrow.src = "sitemap/assets/buttons/arrow/rightarrow/rightArrow.png";
+rightArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/rightarrow/rightArrow.png";
 rightArrow.width = 45;
 rightArrow.height = 45;
 rightArrow.className = "controlButton";
 rightArrow.id= "rightArrow";
 
 const leftArrow = document.createElement("img");
-leftArrow.src = "sitemap/assets/buttons/arrow/leftarrow/leftArrow.png";
+leftArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/leftarrow/leftArrow.png";
 leftArrow.width = 45;
 leftArrow.height = 45;
 leftArrow.className = "controlButton";
@@ -45,10 +45,10 @@ const optionsDisplay = document.querySelector('.options');
 const home = document.createElement('img');
 home.className = "BottomRowImageButton";
 home.id = "homeImage";
-home.src = "sitemap/assets/buttons/home/homeButton.png";
+home.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/home/homeButton.png";
 home.addEventListener('click',()=>{
     var a = document.createElement('a');
-          a.href="index.html";
+          a.href="/Users/lordyolo/Desktop/website/index.html";
         a.click();
 });
 
@@ -61,7 +61,7 @@ optionsDisplay.appendChild(perception);
 perception.addEventListener('click',()=>{
     function link(){
         var a = document.createElement('a');
-        a.href="sitemap/neuropsychology/perception/perception.html";
+        a.href="/Users/lordyolo/Desktop/website/sitemap/neuropsychology/perception/perception.html";
         a.click();
     };
     windowOpen(container);
@@ -76,7 +76,7 @@ optionsDisplay.appendChild(reaction);
 reaction.addEventListener('click',()=>{
     function link(){
         var a = document.createElement('a');
-        a.href="sitemap/neuropsychology/reaction/reaction.html";
+        a.href="/Users/lordyolo/Desktop/website/sitemap/neuropsychology/reaction/reaction.html";
         a.click();
     };
         windowOpen(container);
@@ -91,7 +91,7 @@ optionsDisplay.appendChild(memory);
 memory.addEventListener('click',()=>{
     function link(){
         var a = document.createElement('a');
-        a.href="sitemap/neuropsychology/memory/memory.html";
+        a.href="/Users/lordyolo/Desktop/website/sitemap/neuropsychology/memory/memory.html";
         a.click();
     };
         windowOpen(container);
@@ -106,7 +106,7 @@ optionsDisplay.appendChild(executiveFunction);
 executiveFunction.addEventListener('click',()=>{
     function link(){
         var a = document.createElement('a');
-        a.href="sitemap/neuropsychology/executiveFunction/executiveFunction.html";
+        a.href="/Users/lordyolo/Desktop/website/sitemap/neuropsychology/executiveFunction/executiveFunction.html";
         a.click();
     };
         windowOpen(container);
@@ -115,7 +115,7 @@ executiveFunction.addEventListener('click',()=>{
 const instaLink = document.createElement('img');
 instaLink.className="BottomRowImageButton";
 instaLink.id = 'instaLink';
-instaLink.src = "sitemap/assets/buttons/socialMedia/instalogo/instagram link logo.png"
+instaLink.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/socialMedia/instalogo/instagram link logo.png"
 
 instaLink.addEventListener('click',()=>{
     window.open("https://www.instagram.com/sapienindustry/");
@@ -127,21 +127,21 @@ controls.appendChild(leftArrow);
 function buttonPressedIn(e){
     if(e.target == rightArrow || e.code == "ArrowRight"){
         e.preventDefault();
-        rightArrow.src = "sitemap/assets/buttons/arrow/rightarrow/rightArrowPressed.png";
-        setTimeout(()=>{rightArrow.src = "sitemap/assets/buttons/arrow/rightarrow/rightArrow.png"},150);
+        rightArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/rightarrow/rightArrowPressed.png";
+        setTimeout(()=>{rightArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/rightarrow/rightArrow.png"},150);
     }
     else if(e.target == leftArrow || e.code =="ArrowLeft"){
         e.preventDefault();
         
-        leftArrow.src = "sitemap/assets/buttons/arrow/leftarrow/leftArrowPressed.png";
-        setTimeout(()=>{leftArrow.src = "sitemap/assets/buttons/arrow/leftarrow/leftArrow.png"},150);
+        leftArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/leftarrow/leftArrowPressed.png";
+        setTimeout(()=>{leftArrow.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/leftarrow/leftArrow.png"},150);
     }
 }
 
 function buttonReleased(e,opt,abt,l,r){
     if(e.target == r || e.code == "ArrowRight"){
         e.preventDefault();
-        r.src = "sitemap/assets/buttons/arrow/rightarrow/rightArrow.png";
+        r.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/rightarrow/rightArrow.png";
         // display left arrow
                     l.style.display = 'block';
                     r.style.display = 'none';
@@ -154,7 +154,7 @@ function buttonReleased(e,opt,abt,l,r){
     }
     else if(e.target == l || e.code =="ArrowLeft"){
         e.preventDefault();
-        l.src = "sitemap/assets/buttons/arrow/leftarrow/leftArrow.png";
+        l.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/arrow/leftarrow/leftArrow.png";
         l.style.display = 'none';
         r.style.display = 'inline';
 

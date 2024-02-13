@@ -6,13 +6,13 @@ const backNavigator = document.querySelector(".backNavigator");
 prompt1.className = "prompt1";
 const prompt2 = document.createElement("div");
 const responseProbe = document.createElement("img");
-responseProbe.src = "sitemap/assets/taskProbes/visual/reactionProbe/responseProbe.png";
+responseProbe.src = "/Users/lordyolo/Desktop/website/sitemap/assets/taskProbes/visual/reactionProbe/responseProbe.png";
 responseProbe.width = 120;
 responseProbe.height= 120;
 
 backNavigator.addEventListener("click",()=>{
     var a = document.createElement('a');
-    a.href="sitemap/neuropsychology/reaction/reaction.html";
+    a.href="/Users/lordyolo/Desktop/website/sitemap/neuropsychology/reaction/reaction.html";
     a.click()
 
 })
@@ -80,7 +80,7 @@ cont.addEventListener("click",()=>{
 let seconds = 5;
 
 const spacebarImage = document.createElement("img");
-spacebarImage.src = "sitemap/assets/buttons/spacebar/spaceBar.png"
+spacebarImage.src = "/Users/lordyolo/Desktop/website/sitemap/assets/buttons/spacebar/spaceBar.png"
 spacebarImage.width = 125;
 spacebarImage.height = 60;
 spacebarImage.style.display = "inline-block";

@@ -1,35 +1,16 @@
+
 //TASK SCRIPT
 const html = document.querySelector("html");
 html.style.opacity=0;
 const container = document.querySelector(".container");
 container.style.opacity = 0;
 
-currentTask=0;
-taskInsights={};
-taskInsights.currentTask=[];
-taskInsights.StopOrGoTrial=[];
-taskInsights.stimulus=[]; 
-taskInsights.response=[];
-taskInsights.latency=[];
-taskInsights.buttonPressLatency=[];
-taskInsights.correct=[];
-taskInsights.StopSignalDelay=[]; 
-
-taskReloadTime=2000;
-StopSignalDelay = 450;
-buttonLock=0;
-taskLength=15;
-randomNumberBetween1and0 = Math.random();
-
 const body = document.querySelector("body");
 
 const instructionPage1 = document.querySelector('#instruction1');
 const instructionPage2 = document.querySelector("#instruction2");
 const instructionPage3 = document.querySelector("#instruction3");
-const step1 = document.querySelector("div.steps#step1");
-const step2 = document.querySelector("div.steps#step2");
-const step3 = document.querySelector("div.steps#step3");
-const step4 = document.querySelector("div.steps#step4");
+const instructionPage4 = document.querySelector("#instruction4");
 const practice1 = document.querySelector("#practice1");
 
 const backNavigator = document.querySelector(".backNavigator");
@@ -111,16 +92,15 @@ responseProbe.height= 120;
 responseProbe.className="taskPrompt";
 responseProbe.id="responseProbe";
 
-responseProbeHTMLContainer.appendChild(rightArrowPrompt);
-responseProbeHTMLContainer.appendChild(leftArrowPrompt);
-responseProbeHTMLContainer.appendChild(responseProbe);
+// responseProbeHTMLContainer.appendChild(leftArrowPromptContainerHTML);
+// responseProbeHTMLContainer.appendChild(rightArrowPromptContainerHTML);
+// responseProbeHTMLContainer.appendChild(responseProbe);
 
 var prompt1 = document.createElement("div");
 prompt1.className = "prompt";
 prompt1.id = "prompt1";
 
 function buttonPressedIn(e){
-    
     if(e.target==leftArrow || e.code=="ArrowLeft" || e.target==rightArrow || e.code =="ArrowRight" || e.target ==sButton || e.code  =="KeyS" || e.target==lButton || e.code=="KeyL"){
         e.preventDefault();
         if(e.target == rightArrow || e.code == "ArrowRight")
@@ -149,7 +129,7 @@ function buttonReleased(e){
                 instructionPage1.style.display = "none";
                 instructionPage2.style.display = "block";
                 instructionPage3.style.display = "none";
-                
+                instructionPage4.style.display = "none";
                 taskDisplay.style.display = "none";
 
                 leftArrow.style.display="inline";
@@ -157,150 +137,97 @@ function buttonReleased(e){
                 instructionPage1.style.display = "none";
                 instructionPage2.style.display = "none";
                 instructionPage3.style.display = "block";
-
-                step1.style.display="block";
-                step2.style.display="none";
-                step3.style.display="none";
-
-                practice1.style.display="none";
+                instructionPage4.style.display = "none";
+                
+                leftArrowPrompt.src = "/Users/lordyolo/Desktop/website/sitemap/assets/taskProbes/visual/leftArrowProbe/leftArrowPromptInstruction.jpg";
+                rightArrowPrompt.src ="/Users/lordyolo/Desktop/website/sitemap/assets/taskProbes/visual/rightArrowProbe/rightArrowPromptInstruction.jpg";
+                responseProbe.style.display= "block";
+                leftArrowPrompt.style.display="block";
+                rightArrowPrompt.style.display="block";
                 taskDisplay.style.display = "none";
 
-                rightArrowPromptContainerHTML.appendChild(rightArrowPrompt);
-                leftArrowPromptContainerHTML.appendChild(leftArrowPrompt);
-
-                rightArrowPrompt.src ="/Users/lordyolo/Desktop/website/sitemap/assets/taskProbes/visual/rightArrowProbe/rightArrowPromptInstruction.jpg";
-                leftArrowPrompt.src = "/Users/lordyolo/Desktop/website/sitemap/assets/taskProbes/visual/leftArrowProbe/leftArrowPromptInstruction.jpg";
+                leftArrow.style.display="inline";
+            }else if(getComputedStyle(instructionPage3).display =="block"){
+                instructionPage1.style.display = "none";
+                instructionPage2.style.display = "none";
+                instructionPage3.style.display = "none";
+                instructionPage4.style.display = "block";
+                html.style.filter = "invert(120%)"
                 
                 leftArrow.style.display="inline";
-                rightArrow.style.display="inline";
-
-            }
-            else if(getComputedStyle(instructionPage3).display =="block" &&getComputedStyle(step1).display == "block"){
-
-                step1.style.display="none";
-                step2.style.display="block";
-                step3.style.display="none";
-                instructionPage3.style.display = "block";
-                }
-                else if(getComputedStyle(instructionPage3).display =="block" &&getComputedStyle(step2).display=="block"){
-                    step1.style.display="none";
-                    step2.style.display="none";
-                    step3.style.display="block";
-                    instructionPage3.style.display = "block";
-                    html.style.filter = "invert(120%)";
-                }
-                else if(getComputedStyle(instructionPage3).display =="block" &&getComputedStyle(step3).display=="block"){
-                    step1.style.display="none";
-                    step2.style.display="none";
-                    step3.style.display="none";
-
-                    instructionPage1.style.display="none";
-                    instructionPage2.style.display="none";
-                    instructionPage3.style.display="block";
-                    practice1.style.display="block";
-
-
-                    html.style.filter = "none";
-
-                    leftArrow.style.display="inline";
-                    rightArrow.style.display="inline";
-                
-                
-                
-
-            }else if(getComputedStyle(instructionPage3).display =="block" && getComputedStyle(practice1).display =="block"){
+            }else if(getComputedStyle(instructionPage4).display =="block"){
                 instructionPage1.style.display = "none";
                 instructionPage2.style.display = "none";
                 instructionPage3.style.display = "none";
-                
+                instructionPage4.style.display = "none";
+                html.style.filter="none"
+                practice1.style.display = "block";
+                taskDisplay.style.display = "none";
+
+                leftArrow.style.display="none";
+            }else if(getComputedStyle(practice1).display =="block"){
+                instructionPage1.style.display = "none";
+                instructionPage2.style.display = "none";
+                instructionPage3.style.display = "none";
+                instructionPage4.style.display = "none";
+                practice1.style.display = "none";
                 html.style.filter="none"
                 taskDisplay.style.display = "block";
-                
-                leftArrow.style.display="none";
-                rightArrow.style.display="none";
-
                 rightArrowPrompt.src =rightArrowPromptImageSource.textContent;
                 leftArrowPrompt.src = leftArrowPromptImageSource.textContent;
-                
+                taskDisplay.appendChild(responseProbe)
+                responseProbe.style.display="block";
                 goTrial();
-            }
-        }
-        else if(e.target == leftArrow || e.code == "ArrowLeft"){
-            if(getComputedStyle(instructionPage2).display =="block"){
-                instructionPage1.style.display = "block";
-                instructionPage2.style.display = "none";
-                instructionPage3.style.display = "none";
-                practice1.style.display = "none";
-
-                taskDisplay.style.display = "none";
-                leftArrow.style.display = "none";
-
-            }else if(getComputedStyle(instructionPage3).display =="block" &&getComputedStyle(step1).display == "block"){
-                instructionPage1.style.display = "none";
-                instructionPage2.style.display = "block";
-                instructionPage3.style.display = "none";
-                practice1.style.display = "none";
-        
-                taskDisplay.style.display = "none";
-                leftArrow.style.display = "inline";
-            }
-            
-            else if(getComputedStyle(instructionPage3).display =="block" &&getComputedStyle(step2).display == "block"){
-                instructionPage1.style.display = "none";
-                instructionPage2.style.display = "none";
-                instructionPage3.style.display = "block";  
                 
-                step1.style.display="block";
-                step2.style.display="none";
-                step3.style.display="none";
-                practice1.style.display="none";
-            }
-            else if(getComputedStyle(instructionPage3).display =="block" &&getComputedStyle(step3).display == "block"){
-                instructionPage1.style.display = "none";
-                instructionPage2.style.display = "none";
-                instructionPage3.style.display = "block";  
-                
-                html.style.filter="none";
-                step1.style.display="none";
-                step2.style.display="block";
-                step3.style.display="none";
-                practice1.style.display="none";
-            }
-            else if(getComputedStyle(instructionPage3).display =="block" &&getComputedStyle(practice1).display == "block"){
-                instructionPage1.style.display = "none";
-                instructionPage2.style.display = "none";
-                instructionPage3.style.display = "block";    
-                practice1.style.display = "none";
-                
-                step1.style.display="block";
-                step2.style.display="none";
-                step3.style.display="none";
+                leftArrow.style.display="none";
+            };
+    }
+    else if(e.target == leftArrow || e.code == "ArrowLeft"){
+        if(getComputedStyle(instructionPage2).display =="block"){
+            instructionPage1.style.display = "block";
+            instructionPage2.style.display = "none";
+            instructionPage3.style.display = "none";
+            instructionPage4.style.display = "none";
+            taskDisplay.style.display = "none";
 
-                taskDisplay.style.display = "none";
-                html.style.filter="none"
-                leftArrow.style.display = "inline";
-                leftArrow.style.display = "inline";
-            }
+            leftArrow.style.display = "none";
+    }else if(getComputedStyle(instructionPage3).display =="block"){
+        instructionPage1.style.display = "none";
+        instructionPage2.style.display = "block";
+        instructionPage3.style.display = "none";
+        instructionPage4.style.display = "none";
+        taskDisplay.style.display = "none";
+
+        leftArrow.style.display = "inline";
+}else if(getComputedStyle(instructionPage4).display =="block"){
+    instructionPage1.style.display = "none";
+    instructionPage2.style.display = "none";
+    instructionPage3.style.display = "block";
+    instructionPage4.style.display = "none";
+    taskDisplay.style.display = "none";
+    html.style.filter = "none";
+    leftArrow.style.display = "inline";
+};
+ }else if((e.code == "KeyS" && getComputedStyle(leftArrowPrompt).display=="block") || (e.code =="KeyL"&&(getComputedStyle(rightArrowPrompt).display=="block"))){
+
     
- }else if((e.code == "KeyS" || e.code =="KeyL")&&(getComputedStyle(rightArrowPrompt).display=="block" || getComputedStyle(leftArrowPrompt).display=="block") && getComputedStyle(taskDisplay).display=="block"){
-    
+    //taskInsights.buttonPressLatency.push(keyUp-keyDown);
     leftArrowPrompt.style.display="none";
     rightArrowPrompt.style.display="none";
 
     html.style.backgroundColor="white";
     body.style.backgroundColor="white";
-    
     container.style.backgroundColor="white";
     taskDisplay.style.backgroundColor="white";
-    
-    
-    trialBegin = performance.now();
-    
-    StopOrGo =[];    
+
+    trialBegin = performance.now()
+     
     responseProbe.style.display="block";
     taskDisplay.appendChild(responseProbe);
+
     var promptListForSelection = [rightArrowPrompt,leftArrowPrompt];
     randomPromptImage = promptListForSelection[Math.round(Math.random())];
+
     if(Math.round(Math.random())<0.3){
         setTimeout(()=>{
             if(randomPromptImage==rightArrowPrompt)
@@ -308,33 +235,23 @@ function buttonReleased(e){
                 responseProbe.style.display="none";
                 taskDisplay.appendChild(rightArrowPrompt);
             }
-        else if(randomPromptImage==leftArrowPrompt)
-        {
-            responseProbe.style.display="none";
-            taskDisplay.appendChild(leftArrowPrompt);    
-        };
+            else if(randomPromptImage==leftArrowPrompt)
+            {
+                responseProbe.style.display="none";
+                taskDisplay.appendChild(leftArrowPrompt);    
+            };
         stopTrial()},taskReloadTime);
     }else{
+        html.style.backgroundColor="white";
+        body.style.backgroundColor="white";
         container.style.backgroundColor="white";
         taskDisplay.style.backgroundColor="white";
-        setTimeout(()=>{goTrial()},taskReloadTime);
+        setTimeout(goTrial(),taskReloadTime);
     };
-
 };
-    if(e.code=="KeyS" && getComputedStyle(leftArrowPrompt).display=="block" && getComputedStyle(taskDisplay).display=="block"){
-     taskInsights.response.push("s");
-     taskInsights.latency.push(performance.now()-trialBegin);
-     taskInsights.correct.push(1);
-    };
-    if(e.code=="KeyL" && getComputedStyle(rightArrowPrompt).display=="block" && getComputedStyle(taskDisplay).display=="block"){
-        taskInsights.response.push("l");
-        taskInsights.latency.push(performance.now()-trialBegin);
-        taskInsights.correct.push(1);
-    }
-
-}};
-
-
+return 0;
+}
+};
 
 
 document.addEventListener("mousedown",buttonPressedIn);
@@ -344,79 +261,102 @@ document.addEventListener("mouseup",(e)=>{
 document.addEventListener("keyup",(e)=>{
     setTimeout(buttonReleased,350,e)});
 
-    function goTrial(){
 
-        currentTask++;
-        correctResponse=null;
-        taskInsights.currentTask.push(currentTask);
-        taskInsights.StopOrGoTrial.push("go");
-        taskInsights.StopSignalDelay.push(null);
-        
-        
-        goTrialBegin=0;
-        keyDown=0;
-        keyUp=0;
-        
-        taskDisplay.style.textAlign = "center";
-        taskDisplay.style.margin = "auto"
-        
-        rightArrowPrompt.style.display="none";
-        leftArrowPrompt.style.display="none";
-        
-        html.style.backgroundColor="white";
-        body.style.backgroundColor="white";
-        
-        container.style.backgroundColor="white";
-        taskDisplay.style.backgroundColor="white";
-        
-        responseProbe.style.display="block";
-        
+    taskInsights={};
+    taskInsights.currentTask=[];
+    taskInsights.StopOrGoTrial=[];
+    taskInsights.stimulus=[]; 
+    taskInsights.response=[];
+    taskInsights.latency=[];
+    taskInsights.buttonPressLatency=[];
+    taskInsights.correct=[];
+    taskInsights.StopSignalDelay=[]; 
+
+stopTrialToggle=false;
+
+    currentTask=0;
+
+    taskReloadTime=2000;
+    StopSignalDelay = 450;
+    keyDown=0;
+    keyUp=0;
+
+
+    randomNumberBetween1and0 = Math.random();
+
+function goTrial(){
+    
+    currentTask++;
+    correctResponse=null;
+    taskInsights.currentTask.push(currentTask);
+    taskInsights.StopOrGoTrial.push("go");
+    taskInsights.StopSignalDelay.push(null);
+    
+
+    goTrialBegin=0;
+    keyDown=0;
+    keyUp=0;
+
+    taskDisplay.style.textAlign = "center";
+    taskDisplay.style.margin = "auto"
+
+    rightArrowPrompt.style.display="none";
+    leftArrowPrompt.style.display="none";
+
+    html.style.backgroundColor="white";
+    body.style.backgroundColor="white";
+
+    container.style.backgroundColor="white";
+    taskDisplay.style.backgroundColor="white";
+
+    responseProbe.style.display="block";
+    
         //UPDATING TASK INSIGHTS
-        
+
         var promptListForSelection = [rightArrowPrompt,leftArrowPrompt];
         randomPromptImage = promptListForSelection[Math.round(Math.random())];
-        
+
         setTimeout(()=>{
             
-            goTrialBegin= performance.now();
-            if(randomPromptImage==rightArrowPrompt)
-            {
-                taskInsights.stimulus.push("rightArrow");
+                goTrialBegin= performance.now()
+                if(randomPromptImage==rightArrowPrompt)
+                {
+                    taskInsights.stimulus.push("rightArrow");
                 rightArrowPrompt.style.display="block";
                 leftArrowPrompt.style.display="none";
                 responseProbe.style.display="none";
                 taskDisplay.appendChild(rightArrowPrompt);
-                
+
                 window.addEventListener("keydown",()=>{
-                    
-                    keyDown=performance.now();
+
+                    keyDown=performance.now()
                     taskInsights.latency.push(keyDown-goTrialBegin); 
                 },{once:true});
-                
+
                 window.addEventListener("keyup",(e)=>{
                     if(e.code=="KeyL"){
-                        keyUp=performance.now();
+                        keyUp=performance.now()
                         taskInsights.buttonPressLatency.push(keyUp-keyDown);
                         taskInsights.response.push(e.key);
                         taskInsights.correct.push(1);
-                        
+
                     }else{
-                        
+
                         taskDisplay.style.textAlign = "center";
                         taskDisplay.style.margin = "auto"
-                        
+                    
                         rightArrowPrompt.style.display="none";
                         leftArrowPrompt.style.display="none";
-                        
+                    
                         html.style.backgroundColor="white";
                         body.style.backgroundColor="white";
-                        
+                    
                         container.style.backgroundColor="white";
                         taskDisplay.style.backgroundColor="white";
-                        
+                    
                         responseProbe.style.display="block";
-                        
-                        keyUp=performance.now();
+
+                        keyUp=performance.now()
                         taskInsights.response.push("x");
                         taskInsights.correct.push(0);
                         taskInsights.buttonPressLatency.push(keyUp-keyDown);
@@ -435,39 +375,39 @@ document.addEventListener("keyup",(e)=>{
                 rightArrowPrompt.style.display="none";
                 responseProbe.style.display="none";
                 taskDisplay.appendChild(leftArrowPrompt);
-                
+
                 window.addEventListener("keydown",()=>{
                     
-                    keyDown=performance.now();
+                    keyDown=performance.now()
                     taskInsights.latency.push(keyDown-goTrialBegin); 
                 },{once:true});
-                
+
                 window.addEventListener("keyup",(e)=>{
                     if(e.code=="KeyS")
                     {
-                        keyUp=performance.now();
+                        keyUp=performance.now()
                         taskInsights.buttonPressLatency.push(keyUp-keyDown);
                         taskInsights.response.push(e.key);
                         taskInsights.correct.push(1);
                     }else{
-                        keyUp=performance.now();
+                        keyUp=performance.now()
                         taskInsights.buttonPressLatency.push(keyUp-keyDown);
                         taskInsights.response.push("x");
                         taskInsights.correct.push(0);
                         
-                        
+
                         taskDisplay.style.textAlign = "center";
                         taskDisplay.style.margin = "auto"
-                        
+                    
                         rightArrowPrompt.style.display="none";
                         leftArrowPrompt.style.display="none";
-                        
+                    
                         html.style.backgroundColor="white";
                         body.style.backgroundColor="white";
-                        
+                    
                         container.style.backgroundColor="white";
                         taskDisplay.style.backgroundColor="white";
-                        
+                    
                         responseProbe.style.display="block";
                         if(Math.round(Math.random())<0.3){
                             setTimeout(stopTrial,taskReloadTime);
@@ -478,99 +418,101 @@ document.addEventListener("keyup",(e)=>{
                 },{once:true});
             }
         },taskReloadTime);
-        
+
         
     };
-    
-    
-    function stopTrial(){
-        stopTrialToggle=true;
-        stopTrialBegin = performance.now();
-        keyDown=0;
-        keyUp=0;
+
+
+function stopTrial(){
+    stopTrialToggle=true;
         
-        currentTask++;
-        
-        taskInsights.StopOrGoTrial.push("stop");
-        taskInsights.currentTask.push(currentTask);
-        taskInsights.StopSignalDelay.push(StopSignalDelay);
-        
-        taskDisplay.style.textAlign="center";
-        responseProbe.style.display="none";
-        randomPromptImage.style="block";
-        if(getComputedStyle(rightArrowPrompt).display=="block"){
+        if(getComputedStyle(rightArrow).display=="block"){
             taskInsights.stimulus.push("rightArrow");
         };
-        if(getComputedStyle(leftArrowPrompt).display=="block"){
+        if(getComputedStyle(leftArrow).display=="block"){
             taskInsights.stimulus.push("leftArrow");        
         };
         
-        setTimeout(()=>{
+        stopTrialBegin = performance.now()
+        keyDown=0;
+        keyUp=0;
 
-            correctResponse=true;
-            rightArrowPrompt.style.display="none";
-            leftArrowPrompt.style.display="none";
+    
+    currentTask++;
+
+    taskInsights.StopOrGoTrial.push("stop");
+    taskInsights.currentTask.push(currentTask);
+    taskInsights.StopSignalDelay.push(StopSignalDelay);
+
+    html.style.textAlign="center";
+    responseProbe.style.display="none";
+    randomPromptImage.style="block";
+
+
+    setTimeout(()=>{
+        correctResponse=true;
+        rightArrowPrompt.style.display="none";
+        leftArrowPrompt.style.display="none";
+        responseProbe.style.display="none";
+        
+        html.style.backgroundColor="black";
+        html.style.transitionDuration="0s";
+
+        body.style.backgroundColor="black";
+        body.style.transitionDuration="0s";
+
+        container.style.backgroundColor="black";
+        container.style.transitionDuration="0s";
+
+        taskDisplay.style.backgroundColor="black";
+        taskDisplay.style.transitionDuration="0s";
+
+        document.addEventListener("keydown",(e)=>{
+            if(stopTrialToggle=true && (getComputedStyle(responseProbe).display=="none"&& getComputedStyle(rightArrowPrompt).display=="none" && getComputedStyle(leftArrowPrompt).display=="none")){
+            keyDown=performance.now()
+            taskInsights.latency.push(performance.now()-stopTrialBegin);
+            
+        }},{once:true});
+        document.addEventListener("keyup",(e)=>{
+            if(stopTrialToggle=true && (getComputedStyle(responseProbe).display=="none"&& getComputedStyle(rightArrowPrompt).display=="none" && getComputedStyle(leftArrowPrompt).display=="none")){
+                
+            keyUp=performance.now()
+            correctResponse=false;
+            taskInsights.response.push("x");
+            taskInsights.buttonPressLatency.push(keyUp-keyDown);
+            StopSignalDelay-=25;}
+        },{once:true});  
+
+    },
+        StopSignalDelay);
+        setTimeout(()=>{
             responseProbe.style.display="none";
             
-            html.style.backgroundColor="black";
-            html.style.transitionDuration="0s";
+            if((correctResponse==true)){
             
-            body.style.backgroundColor="black";
-            body.style.transitionDuration="0s";
-            
-            container.style.backgroundColor="black";
-            container.style.transitionDuration="0s";
-            
-            taskDisplay.style.backgroundColor="black";
-            taskDisplay.style.transitionDuration="0s";
-            
-            document.addEventListener("keydown",(e)=>{
-                if(stopTrialToggle==true){
-                    keyDown=performance.now();
-                    taskInsights.response.push("x");
-                    correctResponse=false;
-                    taskInsights.latency.push(performance.now()-stopTrialBegin);
-                    
-                    
-                }},{once:true});
-                document.addEventListener("keyup",(e)=>{
-                    if(stopTrialToggle==true){
-
-                        keyUp=performance.now();
-                        
-                        
-                        taskInsights.buttonPressLatency.push(keyUp-keyDown);
-                        StopSignalDelay-=50;
-                        stopTrialToggle==false;}
-                    },{once:true});  
-                    
-                },
-                StopSignalDelay);
-                setTimeout(()=>{
-                    responseProbe.style.display="none";
-                    
-                    if((correctResponse==true)){
-                        
-                        taskInsights.response.push(null);
-                        taskInsights.correct.push(1);
-                        taskInsights.latency.push(null);
-                        taskInsights.buttonPressLatency.push(null);
-                        StopSignalDelay+=50;
-                    }else{
-                        taskInsights.correct.push(0);
-                    };
-                    
-                    stopTrialToggle=false;
-                    goTrial();
-                },StopSignalDelay+taskReloadTime);
+                taskInsights.response.push(null);
+                taskInsights.correct.push(1);
+                taskInsights.latency.push(null);
+                taskInsights.buttonPressLatency.push(null);
+                StopSignalDelay+=25;
+                
+            }else{
+                taskInsights.correct.push(0);
             };
-            
+            stopTrialToggle=false;
+            goTrial();
+        },StopSignalDelay+taskReloadTime);
+
+
+    };
 
 controls.appendChild(leftArrow);
 controls.appendChild(rightArrow);
 
 const randomButton = document.createElement("button")
 randomButton.innerHTML = "<h1>X</h1>";
+
+
 
 function opacity(y){
     y.style.opacity = 1;
@@ -604,12 +546,8 @@ home.addEventListener('click',()=>{
         a.click();
 });
 
+
 pageInsights={};
 pageInsights.timestamp=[];
 pageInsights.pointer={};
 
-function displayResults(){
-
-    taskDisplay.style.display=="none";
-    const resultsDisplay = document.querySelector(".result");    
-}
