@@ -1,0 +1,95 @@
+body{
+  height: 100vh;
+  margin: auto; 
+  display: block;
+  width: 450px;
+  font-family:Helvetica;
+  font-weight: 200;
+  font-size: medium;
+  color:black;
+  background-color: white;
+}
+h1{
+  font-family: Helvetica;
+  cursor: pointer;
+  font-size:28px;
+  font-weight:200;
+}   
+p.backNavigator{
+  font-family: Helvetica;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight:lighter;
+  color:rgb(190, 190, 190);   
+  width: fit-content;
+}
+p.backNavigator:hover{
+  font-size: 20px;
+}
+p{
+  font-family: Helvetica;
+  font-size: 18px;
+  font-weight:lighter;
+}
+div.controlBox{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  width: fit-content;
+}
+img.controlButton{
+  display: inline;
+  margin-top:25px;
+  cursor: pointer;
+}
+div.container{
+      width: 450px;
+      line-height: 1.4;
+      margin: 0;
+      position: absolute;
+      top:55%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  }
+  .options{
+      display: none;
+      color:black;
+      font-weight: 200;
+      background-color: rgba(255,255,255,0);
+      width: fit-content;
+  }
+      button.pageOptions{
+          display: block;
+          font-size: medium;     
+          width: fit-content;
+          cursor: pointer;
+          line-height: 2;
+          border: none;    
+          background-color: rgba(255,255,255,0);     
+      }
+      button.pageOptions:hover{
+          font-size: larger;
+      }
+  .copyright
+  {
+      position: absolute;
+        width: 450px;
+        color:rgb(190, 190, 190);
+        bottom:15px;
+        text-align: center;
+    }
+.BottomRowImageButton{
+  display: inline;
+  margin: auto;
+  height: 23px;
+  width: auto;
+  cursor: pointer;
+  margin-bottom:22px;
+}
+.bottomRowScrollView{
+  display: flex;
+  height: 120%;
+  margin: auto;
+  text-align: center;
+  filter: opacity(0.4);            
+}

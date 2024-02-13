@@ -1,0 +1,113 @@
+body{
+    height: 100vh;
+    margin: auto; 
+    display: block;
+    width: 450px;
+    font-family:Helvetica;
+    font-weight: 200;
+    font-size: medium;
+    color:black;
+    background-color: white;
+}
+h1{
+    font-family: Helvetica;
+    font-size:28px;
+    font-weight:200;
+}    
+p.backNavigator{
+    font-family: Helvetica;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight:lighter;
+    width: fit-content;
+    color:rgb(190, 190, 190);   
+}
+p.backNavigator:hover{
+    font-size: 20px;
+}
+  p,li{
+    font-family: Helvetica;
+    font-size: 18px;
+    font-weight:lighter;
+  }
+  div.controlBox{
+    display: flex;
+    margin: auto;
+    background-color: rgba(255,255,255,0);
+    width: 50%;
+}
+img.controlButton{
+    display: inline;
+    margin:auto;
+    margin-top:25px;
+    cursor: pointer;
+}
+
+div.container{
+        width: 450px;
+        line-height: 1.4;
+        margin: 0;
+        position: absolute;
+        top:58%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        background-color: rgba(255,255,255,0);
+    }
+    .task{
+        display: none;
+        color:black;
+        font-weight: 200;
+        background-color: rgba(255,255,255,0);
+        width: fit-content;
+    }
+input{
+    align-items: center;
+    margin-top: 25px;
+    margin:15px;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+
+}
+
+.submit{
+    width: 120px;
+    height: 35px;
+    margin: auto;   
+}
+.copyright{
+    position: absolute;
+    width: 450px;
+    color:rgb(190, 190, 190);
+    bottom:15px;
+    text-align: center;
+}
+.BottomRowImageButton{
+    display: inline;
+    margin: auto;
+    height: 23px;
+    width: auto;
+    cursor: pointer;
+    margin-bottom:22px;
+}
+.bottomRowScrollView{
+    display: flex;
+    align-content: space-evenly;
+    width: 120%;
+    height: 120%;
+    margin: auto;
+    text-align: center;
+    filter: opacity(0.4);            
+}
+div.about#about1{
+    display: block;
+}
+div.about#about2{
+    display: none;
+}
+div.about#about3{
+    display: none;
+}
+div.task{
+    display: none;
+}

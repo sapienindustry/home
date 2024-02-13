@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <script src="sitemap/assets/text files/sourceCode/jspdf.min.js"></script>
+        <script src="sitemap/assets/text files/sourceCode/chart.js v4.4.1.js"></script>
+        
+        <link rel ='stylesheet' href =audiometer.css>
+        <link rel="icon" type="images/png" href="sitemap/assets/sapien industry html logo.png"/>
+        
+        <title> 
+            Online Audiometer | Perception
+        </title>
+    </head>
+        <body>
+            <div class="header">
+                <h1>Audiometer</h1>
+                <p class = backNavigator>Back to Perception </p>
+                <div class = "controlBox"></div>
+            </div>
+                <div class="container">
+                    <div class = instruction id =instruction1>
+                        <h3 id="aboutSubheading" class ="subheading">ABOUT</h3>
+                        <p>An audiometer allows a person to measure their hearing sensitivity.</p>
+                        
+                        <h3 id = taskSpecification class="taskInstructionHeader">TASK SPECIFICATION:</h3>
+                        <p style="margin-top: -20px; font-size: medium;">What the task measures.</p>
+                        
+                            <li>The <b style="font-weight:500;">minimum and maximum frequencies in Hertz (Hz)</b> that you can hear (unilaterally and bilaterally).</li>
+                            <li>The <b style="font-weight:500;">lowest volume</b> at which you can detect these frequencies (unilaterally and bilaterally).</li>
+                        
+                    </div>
+                    <div class = instruction id =instruction2>
+                        <h3 class="prerequisitesSubheading" class ="subheading">PREQUISITES:</h3>
+                        <p style="margin-top: -20px; font-size: medium;">To get the best out of this study:</p>
+                    
+                            <li>Connect a headset device.</li>
+                            <li>Ensure you are seated in a quite environment.</li>
+                            <li>Ensure the volume on your device is turned all the way up.</li>
+                            <li>If you are wearing hearing aids, it is recommended that you remove them.</li>
+                    
+                        
+                            <p style ='color:red;'>This audiometer should not be used for diagnostic purposes, it is intended to provide you with a basic description of your hearing sensitivity.<br>
+                                If you are experiencing auditory symptoms (such as hearing loss) please consult an audiologist.
+                        </p>
+                        
+
+                    </div>
+                    <div class=instruction id =instruction3>
+                        <h3 id = instructionSubheading class ="subheading">INSTRUCTIONS:</h3>
+                        <p style="margin-top: -20px; font-size: medium;">How to use the audiometer:</p>
+                        <div id =step1 class="steps">
+                            <h3>STEP 1:</h3>
+                            <div class = "buttonContainer" id = spacebarContainer style="display: block; margin:auto">
+                                <p>Hold:</p>
+                            </div> 
+                        </div>
+                        <div id="step2" class=steps>
+                            <h3>STEP 2:</h3>
+                            <p>
+                                When you notice a sound coming from your device <b>release</b> the spacebar.
+                            </p>
+                        </div>
+                        <div id="step3" class="steps">
+                            <h3>STEP 3:</h3>
+                            <p>You should hear a low humming sound.</p>
+                            <ul>
+                                <li>If not, press the left arrow to try again.</li>
+                                <li>If you do, press the right arrow to continue.</li>
+                            </ul>
+                        </div>
+                    </div>
+                        <div id="step4" class="steps">
+                            <h3>Great! You are ready to begin.</h3>
+                            <li>The audiometer has a total of <b>19 trials</b> and should take you about <b>5 minutes</b> to complete.</li>
+                            <li> When you are done, you will be shown a graphical representation of the range of sounds that you can hear (an audiograph).</li>
+                            <br><br>
+                                <div class = "buttonContainer" id = enterContainer style="display: none;"></div>
+                            <br>Press enter to proceed.
+                        </div>
+                    <div class=task>
+                        
+                    </div> 
+                    <div class=results>
+                        <h3 id = resultsSubheading class ="subheading">RESULTS:</h3>
+                        <p style="margin-top: -20px; font-size: medium;">*Please note that results are based on the sound capabilites of your device and headphones.<br>Below is a description of your hearing sensitivity:</p>
+                        <div id =resultsPage1 class="resultsPage">
+                            <h3>Minimum discernible sound frequency:</h3>
+                            <canvas id="lowHz" class="graph"></canvas>
+                        </div>
+                        <div id =resultsPage2 class="resultsPage">
+                            <h3>Maximum discernible sound frequency:</h3>
+                            <canvas id="highHz"class="graph"></canvas>
+                        </div>
+                        
+                    </div>
+                </div>  
+            </body>
+            <script src="audiometer.js"></script>
+            <div class="copyright">© 2024 Sapien Industry.</div>
+</html>
+    

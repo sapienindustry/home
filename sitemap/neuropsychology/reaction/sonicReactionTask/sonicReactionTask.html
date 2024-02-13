@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Auditory Reaction Task | Neuropsychology</title>
+        <link rel="icon" type="images/png" href="sitemap/assets/sapien industry html logo.png"/>
+        <link rel ='stylesheet' href='sonicReactionTask.css'> 
+        <meta meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    </head>
+    <body>
+        <div class="header">
+            <h1>Auditory Reaction Task </h1>
+            <p class = backNavigator>Back to reaction</p>
+            <div class="controlBox"></div>
+        </div>
+        <div class="container">
+            <div class="instruction" id="instruction1">
+                <h3 id="aboutSubheading" class ="subheading">ABOUT</h3>
+                <p>The Auditory Reaction Task provides a base reaction rate to sound. This reaction speed can be used in comparison with reaction speeds of other (more complex) tasks.</p>
+                <br>
+
+                <h3 id = taskSpecification class="taskInstructionHeader">TASK SPECIFICATION:</h3>
+                <p style="margin-top: -20px; font-size: medium;">What the task measures.</p>
+                <p><li>The <b style="font-weight:500;">average response time</b>, in milliseconds (ms), to the sound.</li>
+                <li>The <b style="font-weight:500;">quickest response time</b>, in milliseconds (ms), to the sound.</li></p>
+            </div>
+
+            <div class=instruction id =instruction2>
+                <h3 class="prerequisitesSubheading" class ="subheading">PREQUISITES:</h3>
+                <p style="margin-top: -20px; font-size: medium;">To get the best out of this study:</p>
+                <p>
+                    <li>Ensure that you are seated in a quite environment.</li>
+                    <li>Ensure that the volume on your device is at the highest setting.</li>
+                    <li>If you wear a hearing aid, feel free to compare your response times with and without them on.</li>
+                </p>
+                <p style="color: red;">
+                    The Audio Reaction Task should not be used for diagnostic purposes, it is intended to provide you with a basic description of reaction to sound.
+                </p>
+                <p style="color: red;">
+                    If you are experiencing auditory symptoms (such as hearing loss) please consult an audiologist.
+                </p>
+                
+            </div>
+            <div class=instruction id =instruction3>
+                <h3 id = instructionSubheading class ="subheading">INSTRUCTIONS:</h3>
+                <div id =step1 class="steps">
+                    <h3>STEP 1:</h3>           
+                    <p>Press the "♩" picture to hear the sound.</p>
+                    <div class = "buttonContainer" id = playSoundContainer style="display: block;"></div>
+                </div>
+                <div id="step2" class="steps">
+                    <h3>STEP 2:</h3>
+                    <p>As soon as you hear the sound, press:</p>
+                    <div class = "buttonContainer" id = spacebarContainer style="display: block; margin:auto"></div>
+                    
+                </div>
+                <div id="step3" class="steps">
+                    <h3>STEP 3:</h3>
+                    <p style="display: inline;">
+                        <div class = "buttonContainer" id = enterContainer style="display: none;"><p>Press</p></div>
+                        to proceed.
+                    </p>
+                </div>
+            </div>  
+            <div class="task"></div>
+            <div class="results"></div>  
+        </div>
+    </body>    
+    <script src='sonicReactionTask.js'></script>
+    <div class="copyright">© 2024 Sapien Industry.</div>
+</html>
